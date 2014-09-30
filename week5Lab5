@@ -1,0 +1,26 @@
+// Week5Lab5: Using While()…. loop to allow user to play 3 times.
+
+import java.util.Scanner;
+public class Week5Lab5{
+
+  public static void main(String[] args){
+  int computerNum;
+  int counter=0;
+
+  computerNum=0+(int)(Math.random()*10);
+  //System.out.println("Random number is: " + computerNum);
+
+  while (counter<3){
+  	int userNum;
+    	String answer;  
+
+Scanner input = new Scanner(System.in);
+System.out.print("Enter a number from 1 to 10 here: ");
+userNum=input.nextInt();
+
+answer=(userNum>computerNum) ? "too high":"too low";
+if (userNum==computerNum)
+    	answer="Match";
+System.out.println(answer);
+counter=counter+1;
+  }}}
