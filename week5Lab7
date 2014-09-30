@@ -1,0 +1,44 @@
+// Week5Lab7: to allow user to play until they no longer wish to play 
+
+import java.util.Scanner;
+public class Week5Lab7{
+    
+  public static void main(String[] args){
+
+  int computerNum;
+  int counter=1;
+ 
+  computerNum=0+(int)(Math.random()*10);
+  System.out.println("Random number is: " + computerNum);
+
+  while(counter>0){
+
+      int userNum;
+      int ask;
+      String answer;
+
+      Scanner input = new Scanner(System.in);
+      System.out.print("Enter a number from 1 to 10 here: ");
+      userNum=input.nextInt();
+
+      answer=(userNum>computerNum) ? "too high":"too low";
+
+      if (userNum==computerNum)
+      {
+        answer="Match";
+        System.out.println(answer);
+        computerNum=0+(int)(Math.random()*10);
+        System.out.println("Random number is: " + computerNum);
+      }
+      else
+        System.out.println(answer);
+      
+      counter++;
+
+      //Ask after each round
+      System.out.print("Do you want to play more? Typing key number one (1) to continue. Typing key number zero (0) to stop: ");
+      ask=input.nextInt();
+      if (ask==0)
+        break;
+
+  }}}
