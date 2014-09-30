@@ -1,0 +1,23 @@
+// Week5Lab4: Using for() loop to allow user to play 3 times.
+import java.util.Scanner;
+public class Week5Lab4{
+    
+  public static void main(String[] args){
+  	int computerNum; 
+ computerNum=0+(int)(Math.random()*10);
+// System.out.println("Random number is: " + computerNum);
+
+ for(int i=0; i<3; i++){
+int userNum;
+String answer;
+
+     		Scanner input = new Scanner(System.in);
+     		System.out.print("Enter a number from 1 to 10 here: ");
+      		userNum=input.nextInt();
+
+      		answer=(userNum>computerNum) ? "too high":"too low";
+
+     		if (userNum==computerNum)
+        		answer="Match";
+System.out.println(answer);
+  }}}
