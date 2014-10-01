@@ -1,0 +1,90 @@
+//------------------------------Sinh Doan---------------------------------------------
+//------------------------------Week5 Homework-----------------------------------------
+//------------------------------Implement a rock-paper-scissor game--------------------
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class RockPaperScissor
+{
+public static void main(String[] args) 
+{
+    String PlayOfUser; //Computer and User's play -- "R", "P", or "S"
+    String PlayOfComputer = ""; 
+    int RandomNumInt;    
+    int ask, counter=1;
+
+    Scanner input = new Scanner(System.in);
+    Random generator = new Random();
+
+    System.out.println("Hello, we're playing a Rock-Paper-Scissors game!\n" +
+                        "Rock = R, Paper" + "= P, and Scissors = S\n" + "Please enter a move.");
+
+    System.out.println();
+
+    //Randomly generated number used to determine computer's play
+    RandomNumInt = generator.nextInt(3)+1;
+
+    if (RandomNumInt == 1)
+       PlayOfComputer = "R";
+    else if (RandomNumInt == 2)
+       PlayOfComputer = "P";
+    else if (RandomNumInt == 3)
+       PlayOfComputer = "S";
+
+
+    while(counter>0){
+
+    //Get user's play from input
+    System.out.print("Enter your play; 'R' or 'P' or 'S': ");
+    PlayOfUser = input.next();  
+    PlayOfUser = PlayOfUser.toUpperCase();
+
+    //Print computer's play
+    System.out.println("Computer's play is: " + PlayOfComputer);
+
+
+    //Print out who won
+
+    if (PlayOfUser.equals(PlayOfComputer))
+        System.out.println("It's a tie!\n");
+
+    if (PlayOfUser.equals("R"))
+        if (PlayOfComputer.equals("S"))
+            System.out.println("Rock crushes scissors. You win!!\n");
+    else if (PlayOfComputer.equals("P"))
+            System.out.println("Paper eats rock. You lose!!\n");
+
+    if (PlayOfUser.equals("P"))
+        if (PlayOfComputer.equals("S"))
+            System.out.println("Scissor cuts paper. You lose!!\n");
+    else if (PlayOfComputer.equals("R"))
+            System.out.println("Paper eats rock. You win!!\n");
+
+    if (PlayOfUser.equals("S"))
+        if (PlayOfComputer.equals("P"))
+            System.out.println("Scissor cuts paper. You win!!\n");
+    else if (PlayOfComputer.equals("R"))
+        System.out.println("Rock breaks scissors. You lose!!\n"); 
+
+    counter++;
+
+       //Ask after each round
+      System.out.print("Do you want to play more? Typing key number one (1) to continue. Typing key number zero (0) to stop: ");
+      ask=input.nextInt();
+      if (ask==0)
+        break;
+      else
+      {         
+        //Randomly generated number used to determine computer's play
+        RandomNumInt = generator.nextInt(3)+1;
+
+        if (RandomNumInt == 1)
+            PlayOfComputer = "R";
+        else if (RandomNumInt == 2)
+            PlayOfComputer = "P";
+        else if (RandomNumInt == 3)
+            PlayOfComputer = "S";
+      }
+
+    }}}
